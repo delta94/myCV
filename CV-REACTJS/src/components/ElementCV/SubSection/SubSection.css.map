@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,WAAW,CACP,UAAU,CAAE,KAAK,CAEb,oCAAmB,CACf,MAAM,CAAE,iBAAiB,CACzB,aAAa,CAAE,GAAG,CAG1B,8BAAmB,CACf,OAAO,CAAE,QAAQ,CACjB,UAAU,CAAE,IAAI",
+"sources": ["SubSection.scss"],
+"names": [],
+"file": "SubSection.css"
+}

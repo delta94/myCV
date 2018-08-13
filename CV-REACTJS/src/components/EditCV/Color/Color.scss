@@ -1,0 +1,60 @@
+hover{
+    &:hover{
+        border: 2px solid green;
+    }
+}
+
+circel{
+    margin-left: 10px;
+    border-radius: 50%;
+    padding-left: 5px;
+}
+
+$color1 : #3ba469;
+$color2 : #556e8e;
+$color3 : #4286f4;
+$color4 : #fcc188;
+$color5 : #95cd87;
+
+.color-wraper{
+    
+    .check-color{ 
+        @extend circel;
+        @extend hover;
+    }   
+    i.fa.fa-check {
+        letter-spacing: 5px;
+        color:white;
+    }
+    .color1{
+        background-color: $color1;
+    }
+    .color2{
+        background-color: $color2;
+    }
+    .color3{
+        background-color: $color3;
+    }
+    .color4{
+        background-color: $color4;
+    }
+    .color5{
+        background-color: $color5;
+    }
+    i.fa.fa-check.c1{
+        color: $color1
+    }
+    i.fa.fa-check.c2{
+        color: $color2
+    }
+    i.fa.fa-check.c3{
+        color: $color3
+    }
+    i.fa.fa-check.c4{
+        color: $color4
+    }
+    i.fa.fa-check.c5{
+        color: $color5
+    }
+    
+}

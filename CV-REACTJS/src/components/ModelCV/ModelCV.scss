@@ -1,0 +1,38 @@
+.ModelCV{
+    margin-top: 10px;
+}
+.ModelCV-Wraper {
+    width: 803.69px;
+    height: 2255.03px;
+    padding: 30px 30px;
+    margin: 20px -15px;
+    background-color: white;
+    box-shadow: 2px 0px 8px 2px;
+    .TitleCV{
+        text-align: center;
+        
+    }
+    .CV-Header{
+        margin-bottom: 70px;
+        padding: 10px 10px;
+        .UserName{
+            margin-left: 60px;
+            margin-top: -10px;
+            width: 510px;
+            .font-size-1{
+                font-size: 35px;
+            }
+        }
+        .UserInfo{
+            margin-left: -495px;
+            margin-top: 80px;
+            
+            .InputField {
+                margin-left: 15px;
+            }
+        }
+    }
+    .skill-level{
+        font-size: 30px;
+    }
+}

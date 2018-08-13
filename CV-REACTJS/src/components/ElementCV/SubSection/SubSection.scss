@@ -1,0 +1,14 @@
+.SubSection{
+    margin-top: -45px;
+    &:hover{
+        .SubSection-wraper {
+            border: 1.5px solid black;
+            border-radius: 7px;
+        }
+    }
+    .SubSection-wraper {
+        padding: 5px 20px;
+        margin-top: 50px;
+        
+    }
+}

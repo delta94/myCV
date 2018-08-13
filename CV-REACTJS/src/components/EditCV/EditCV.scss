@@ -1,0 +1,97 @@
+hover{
+    &:hover{
+        border: 2px solid green;
+    }
+}
+
+circel{
+    margin-left: 10px;
+    border-radius: 50%;
+    padding-left: 5px;
+}
+.EditCV{
+    background-color: white;
+    .active-lang{
+        border: 2px solid green;
+    }
+    .SelectLanguage {
+        margin-left: -8px;
+    }
+    .language{
+        label{
+            margin-left: -10px;
+        }
+    }
+    .add-cv{
+        label{
+            margin-left: -25px;
+        }
+    }
+    .change-cv{
+        label{
+            margin-left: -25px;
+        }
+    }
+    .save-cv{
+        label{
+            margin-left: -25px;
+        }
+    }
+    img.img-thumbnail {
+        width: 32px;
+        @extend hover;
+    }
+
+    
+    .FontSize{
+        .active-size{
+            border: 2px solid green;
+        }
+        .size{
+            @extend circel;
+            padding-right: 5px;
+            @extend hover;
+        }
+        .size-12{
+            font-size: 12px;
+        }
+        .size-14{
+            font-size: 14px;
+        }
+        .size-16{
+            font-size: 16px;
+        }
+    }
+
+    .Arrow{
+        .arrows{
+            @extend circel;
+            padding-left: 10px;
+            padding-right: 10px;
+            @extend hover;
+        }
+        .active-arrow{
+            border: 2px solid green;
+        }
+        .arrows-2{
+            font-size: 12px;
+        }
+        .arrows-4{
+            font-size: 14px;
+        }
+        .arrows-6{
+            font-size: 16px;
+        }
+    }
+
+}
+
+.editor-controls{
+    .editor-control-group{
+        height: 25px;
+    }
+    .editor-control-item {
+        padding: 5px 15px;
+        border: 0.1px solid black;
+    }
+}

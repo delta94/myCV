@@ -1,0 +1,25 @@
+.Avatar{
+    width: 175px;
+    height: 175px;
+    border-radius: 50%;
+    background-color: whitesmoke;
+    &:hover{
+        background-color: ( black !important );
+        .fas.fa-camera{
+            color: white;
+        }
+    }
+    .Avatar-button{
+        width: 50px;
+        margin: 0px 65px;
+        padding: 65px 0px;
+        .Avatar-button-input {
+            margin-top: -50px;
+            width: 50px;
+            height: 50px;
+            input.custom-file-input {
+                height: 50px;
+            }
+        }
+    }
+}

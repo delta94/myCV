@@ -1,0 +1,41 @@
+$bg-b : #2f99b5;
+$bg-r : #e63946;
+$text-color : white;
+.SectionAction-wraper{
+    $bg : bgb;
+}
+.SectionAction-wraper-b{
+    $bg : bgr;
+}
+.SectionAction{
+    margin: -73px -21px;
+    float: right;
+    padding: 10px 5px;
+    border: 1.5px solid black;
+    border-radius: 7px;
+
+    .SectionAction-wraper{
+        margin-left: 20px;
+        padding: 3px 15px;
+        &:hover{
+            border-radius: 10%;
+            background-color: $bg-b;
+            .section-action{
+                color: $text-color; 
+            }
+            
+        }
+    }
+    .SectionAction-wraper-b{
+        margin-left: 20px;
+        padding: 3px 15px;
+        &:hover{
+            border-radius: 10%;
+            background-color: $bg-r;
+            .section-action{
+                color: $text-color; 
+            }
+            
+        }
+    }
+}
