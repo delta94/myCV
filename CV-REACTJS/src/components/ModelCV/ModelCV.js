@@ -37,7 +37,6 @@ class ModelCV extends Component {
   }
   componentWillMount(){
     this.props.fetchCV(1);
-    console.log("props",this.props)
   }
 
   render() {

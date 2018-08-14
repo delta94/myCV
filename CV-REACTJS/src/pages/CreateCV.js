@@ -4,10 +4,14 @@ import ModelCV from './../components/ModelCV/ModelCV';
 
 class CreateCV extends Component {
   componentDidMount(){
-    //console.log("props",this.props)
+    this.getQueryParams(window.location.href)
+  }
+  getQueryParams(qs) {
+    var re = /\w+\b/g;
+    var result = re[Symbol.match](qs);
+    return result[4];
   }
   render() {
-    console.log("props",this.props)
     return (
       <div>
         <EditCV />

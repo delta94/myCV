@@ -10,7 +10,7 @@ const routes = [
     main: () => <Home />
   },
   {
-    path: "/create-cv/:id",
+    path: "/createcv/:id",
     exact: false,
     main: () => <CreateCV />
   },

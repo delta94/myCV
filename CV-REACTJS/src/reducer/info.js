@@ -5,7 +5,6 @@ const info = (state = initialState, action) => {
     switch (action.type){
         case Types.FETCH_CV:
             state = action.cv;
-            console.log(state)
             return state;
         case Types.CHANGE_COLOR:
             state = action.cv;
