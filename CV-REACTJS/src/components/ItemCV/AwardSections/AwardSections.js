@@ -21,12 +21,12 @@ class AwardSections extends Component {
   shouldComponentUpdate(nextProps){
     language = nextProps.info.language;
     idcv = nextProps.info._id;
-    this.props.fetchAllAward(idcv);
+    //this.props.fetchAllAward(idcv);
     return true;
   }
 
   componentDidMount(){
-    //this.props.fetchAllAward(1);
+    this.props.fetchAllAward(1);
   }
 
   changeLanguage = (language) =>{

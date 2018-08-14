@@ -1,3 +1,5 @@
+export const GET_ID_CV = "GET_ID_CV";
+
 export const CHANGE_LANGGUAGE = "CHANGE_LANGGUAGE";
 export const CHANGE_COLOR = "CHANGE_COLOR";
 export const CHANGE_FONT = "CHANGE_FONT";

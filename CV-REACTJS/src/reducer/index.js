@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import award from './award';
+import idcv from './idcv';
 // import language from './language';
 // import certificate from './certificate';
 // import education from './education';
@@ -14,6 +15,7 @@ import info from './info';
 const appReducers = combineReducers({
     // language,
     award,
+    idcv,
     // certificate,
     // education,
     // objective,

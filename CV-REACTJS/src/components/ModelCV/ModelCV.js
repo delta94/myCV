@@ -32,11 +32,12 @@ class ModelCV extends Component {
     bgColors = "#"+ nextProps.info.color ;
     nameCV = nextProps.info.namecv ;
     idcv = nextProps.info._id;
-    this.props.fetchCV(idcv);
+    //this.props.fetchCV(idcv);
     return true;
   }
   componentWillMount(){
-    //this.props.fetchCV(1);
+    this.props.fetchCV(1);
+    console.log("props",this.props)
   }
 
   render() {
@@ -71,7 +72,8 @@ class ModelCV extends Component {
 
 const mapStateToProps = (state) =>{
   return {
-    info : state.info
+    info : state.info,
+    idcv : state.idcv
   }
 }
 

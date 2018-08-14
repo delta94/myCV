@@ -1,6 +1,13 @@
 import * as Types from './../constant/ActionType';
 import CallApi from './../until/apiCaller';
 
+export const getIDCV = (id) =>{
+  return {
+    type: Types.GET_ID_CV,
+    id
+  }
+}
+
 export const actfetchCV = (cv) =>{
   return {
     type: Types.FETCH_CV,
