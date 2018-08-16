@@ -16,6 +16,7 @@ exports.RemoveAward = function(req, res, next){
 exports.UpdateAward = function(req, res, next){
     Award.findByIdAndUpdate({_id : req.params.id}, req.body).then(function(){
         Award.findOne({_id: req.params.id}).then(function(data){
+            console.log(data)
             res.send(data);
         });
     });

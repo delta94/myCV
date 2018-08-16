@@ -37,6 +37,7 @@ class AwardSections extends Component {
 
   addNew = (number) =>{
     return {
+        _id : 5,
         name : "TÊN GIẢI THƯỞNG",
         day : "Ngày Cấp",
         type : "Loại Giải",

@@ -23,18 +23,19 @@ class AwardSection extends Component {
   }
 
   render() {
+    console.log(this.props.children)
     return (
         <SubSection deleteSection={this.props.deleteSection}>
             <div className="row">
               <div className="col-md-9">
-                <InputField data={(data,id) => this.updateName(data, this.props.children.id)}>{this.props.children.name}</InputField>
+                <InputField data={(data,id) => this.updateName(data, this.props.children._id)}>{this.props.children.name}</InputField>
               </div>
               <div className="col-md-3">
-                <InputField data={(data,id) => this.updateDay(data, this.props.children.id)}>{this.props.children.day}</InputField>
+                <InputField data={(data,id) => this.updateDay(data, this.props.children._id)}>{this.props.children.day}</InputField>
               </div>
             </div>
-            <InputField data={(data,id) => this.updateType(data, this.props.children.id)} >{this.props.children.type}</InputField>
-            <InputField data={(data,id) => this.updateBy(data, this.props.children.id)}>{this.props.children.by}</InputField>
+            <InputField data={(data,id) => this.updateType(data, this.props.children._id)} >{this.props.children.type}</InputField>
+            <InputField data={(data,id) => this.updateBy(data, this.props.children._id)}>{this.props.children.by}</InputField>
           </SubSection>
     );
   }

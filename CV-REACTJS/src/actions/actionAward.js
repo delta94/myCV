@@ -8,10 +8,10 @@ export const actfetchAllAward = (award) =>{
     }
   }
   
-  export const actAddAward = (number) =>{
+  export const actAddAward = (award) =>{
     return {
       type: Types.ADD_AWARD,
-      number
+      award
     }
   }
   
