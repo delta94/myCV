@@ -53,6 +53,7 @@ export const actfetchAllAward = (award) =>{
   export const actAddAwardRequest = (award) =>{
     return (dispatch)=> {
       return CallApi('award', 'POST', award).then(res =>{
+        console.log(award)
         dispatch(actAddAward(res.data));
       });
     }

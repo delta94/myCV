@@ -18,7 +18,7 @@ class TypesCV extends Component {
         <div className="card-body">
           <h5 className="card-title">CV số{this.props.id}</h5>
           <p className="card-text">Đây là cv của bạn</p>
-          <Link to={`/create-cv/${this.props.id}`} onClick={this.selectCV(this.props.id)} className="btn btn-primary">Đi tới chỉnh sửa</Link>
+          <Link to={`/createcv/${this.props.id}`} onClick={this.selectCV(this.props.id)} className="btn btn-primary">Đi tới chỉnh sửa</Link>
         </div>
       </div>
     );

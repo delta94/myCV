@@ -1,6 +1,7 @@
 var Award = require("../model/award");
 
 exports.CreateAward = function(req, res, next){
+
     Award.create(req.body).then(function(data){
         res.send(data);
     }).catch(next);

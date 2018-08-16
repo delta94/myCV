@@ -31,12 +31,12 @@ class ModelCV extends Component {
     //console.log(nextProps);
     bgColors = "#"+ nextProps.info.color ;
     nameCV = nextProps.info.namecv ;
-    idcv = nextProps.info._id;
     //this.props.fetchCV(idcv);
     return true;
   }
   componentWillMount(){
-    this.props.fetchCV(1);
+    this.props.fetchCV(this.props.idcv);
+    console.log(this.props)
   }
 
   render() {

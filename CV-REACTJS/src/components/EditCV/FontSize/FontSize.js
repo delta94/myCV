@@ -43,7 +43,7 @@ class FontSize extends Component {
       });
       sz = "18"
     }
-    this.props.changeSize(sz,this.props.id);
+    this.props.changeSize(sz,this.props.idcv);
   }
 
   render() {
@@ -60,7 +60,7 @@ class FontSize extends Component {
 
 const mapStateToProps = (state) =>{
   return {
-    info : state.info
+    idcv : state.idcv
   }
 }
 

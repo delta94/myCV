@@ -77,7 +77,7 @@ class Color extends Component {
       });
       cl = "95cd87";
     }
-    this.props.changeColor(cl,1);    
+    this.props.changeColor(cl,this.props.idcv);    
   }
 
   render() {
@@ -110,7 +110,7 @@ class Color extends Component {
 
 const mapStateToProps = (state) =>{
   return {
-    info : state.info
+    idcv : state.idcv
   }
 }
 

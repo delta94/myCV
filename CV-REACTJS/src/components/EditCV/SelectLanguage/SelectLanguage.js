@@ -20,14 +20,14 @@ class SelectLanguage extends Component {
         en : "active-lang",
         vi : ""
       });
-      this.props.changeLanguage("en",1);
+      this.props.changeLanguage("en",this.props.idcv);
     }
     else{
       this.setState({
         vi : "active-lang",
         en : ""
       });
-      this.props.changeLanguage("vi", 1);
+      this.props.changeLanguage("vi", this.props.idcv);
     }
   }
 
@@ -42,6 +42,12 @@ class SelectLanguage extends Component {
   }
 }
 
+const mapStateToProps = (state) =>{
+  return {
+    idcv : state.idcv
+  }
+}
+
 const mapDispatchToProps = (dispatch, props) =>{
   return{
     changeLanguage : (la, id) =>{
@@ -50,4 +56,4 @@ const mapDispatchToProps = (dispatch, props) =>{
   }
 }
 
-export default connect(null,mapDispatchToProps)(SelectLanguage);
+export default connect(mapStateToProps,mapDispatchToProps)(SelectLanguage);

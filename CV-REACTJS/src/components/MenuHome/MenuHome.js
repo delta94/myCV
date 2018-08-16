@@ -8,7 +8,7 @@ class MenuHome extends Component {
       <div className="menu-home container-fuild">
         <div className="row">
           <div className="button-cv col-md-6">
-            <Link to="/create-cv" className="btn btn-success">Tạo CV ngay</Link>
+            <Link to="/createcv" className="btn btn-success">Tạo CV ngay</Link>
           </div>
           <div className="introduce col-md-6">
             <h3>Tạo CV đầu tiên trên TopCV</h3>

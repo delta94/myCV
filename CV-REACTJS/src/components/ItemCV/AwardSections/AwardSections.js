@@ -25,8 +25,8 @@ class AwardSections extends Component {
     return true;
   }
 
-  componentDidMount(){
-    this.props.fetchAllAward(1);
+  componentWillMount(){
+    this.props.fetchAllAward(this.props.idcv);
   }
 
   changeLanguage = (language) =>{
@@ -37,11 +37,11 @@ class AwardSections extends Component {
 
   addNew = (number) =>{
     return {
-        id : number,
         name : "TÊN GIẢI THƯỞNG",
         day : "Ngày Cấp",
         type : "Loại Giải",
-        by : "Cấp bởi tổ chức"
+        by : "Cấp bởi tổ chức",
+        idcv: this.props.idcv
     }
   }
 
@@ -54,7 +54,7 @@ class AwardSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addAward(this.addNew(number)) } >
           {
             items.map((item,index) => (
-              <AwardSection key={index} deleteSection = {(e)=>this.props.deleteAward(item.id)}  >{item}</AwardSection>
+              <AwardSection key={index} deleteSection = {(e)=>this.props.deleteAward(item._id)}  >{item}</AwardSection>
             ))
           }
         </ContentField>
@@ -66,7 +66,8 @@ class AwardSections extends Component {
 const mapStateToProps = (state) =>{
   return {
     info : state.info,
-    award : state.award
+    award : state.award,
+    idcv: state.idcv
   }
 }
 

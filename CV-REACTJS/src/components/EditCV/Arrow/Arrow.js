@@ -43,7 +43,7 @@ class Arrow extends Component {
       });
       ar = "6"
     }
-    //this.props.changeArrow(ar,1);
+    this.props.changeArrow(ar,this.props.idcv);
   }
 
   render() {
@@ -58,13 +58,18 @@ class Arrow extends Component {
   }
 }
 
-// const mapDispatchToProps = (dispatch, props) =>{
-//   return{
-//     changeArrow : (ar, id) =>{
-//       dispatch(actions.actChangeArrowRequest(ar,id));
-//     }
-//   }
-// }
+const mapStateToProps = (state) =>{
+  return {
+    idcv : state.idcv
+  }
+}
 
-// export default connect(null,mapDispatchToProps)(Arrow);
-export default Arrow;
+const mapDispatchToProps = (dispatch, props) =>{
+  return{
+    changeArrow : (ar, id) =>{
+      dispatch(actions.actChangeArrowRequest(ar,id));
+    }
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Arrow);

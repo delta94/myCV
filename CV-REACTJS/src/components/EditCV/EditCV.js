@@ -23,7 +23,7 @@ class EditCV extends Component {
     this.setState({
       [name] : value
     });
-    this.props.changeFont(value,1);
+    this.props.changeFont(value,this.props.idcv);
   }
 
   render() {
@@ -103,6 +103,12 @@ class EditCV extends Component {
   }
 }
 
+const mapStateToProps = (state) =>{
+  return {
+    idcv : state.idcv,
+  }
+}
+
 const mapDispatchToProps = (dispatch, props) =>{
   return{
     changeFont : (fo,id) =>{
@@ -111,4 +117,4 @@ const mapDispatchToProps = (dispatch, props) =>{
   }
 }
 
-export default connect(null, mapDispatchToProps)(EditCV);
+export default connect(mapStateToProps, mapDispatchToProps)(EditCV);
