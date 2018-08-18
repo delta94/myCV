@@ -7,14 +7,14 @@ exports.CreateLanguage = function(req, res, next){
 }
 
 exports.RemoveLanguage = function(req, res, next){
-    Language.findByIdAndRemove({id: req.params.id}).then(function(data){
+    Language.findByIdAndRemove({_id: req.params.id}).then(function(data){
         res.send(data);
     }).catch(next);
 }
 
 exports.UpdateLanguage = function(req, res, next){
-    Language.findByIdAndUpdate({id : req.params.id}, req.body).then(function(){
-        Language.findOne({id: req.params.id}).then(function(data){
+    Language.findByIdAndUpdate({_id : req.params.id}, req.body).then(function(){
+        Language.findOne({_id: req.params.id}).then(function(data){
             res.send(data);
         });
     });
@@ -22,12 +22,6 @@ exports.UpdateLanguage = function(req, res, next){
 
 exports.GetAllLanguage = function(req, res, next){
     Language.find({idcv: req.params.idcv}).then(function(data){
-        res.send(data);
-    });
-}
-
-exports.GetLanguagebyID = function(req, res, next){
-    Language.findOne({idcv: req.params.idcv,id: req.params.id}).then(function(data){
         res.send(data);
     });
 }

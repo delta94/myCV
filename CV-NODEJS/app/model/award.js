@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const AwardSchema = mongoose.Schema({
     _id :{
-        type: Number
+        type: String
     },
     name :{
         type: String

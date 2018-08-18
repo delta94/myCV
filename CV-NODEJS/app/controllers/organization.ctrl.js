@@ -7,14 +7,14 @@ exports.CreateOrganization = function(req, res, next){
 }
 
 exports.RemoveOrganization = function(req, res, next){
-    Organization.findByIdAndRemove({id: req.params.id}).then(function(data){
+    Organization.findByIdAndRemove({_id: req.params.id}).then(function(data){
         res.send(data);
     }).catch(next);
 }
 
 exports.UpdateOrganization = function(req, res, next){
-    Organization.findByIdAndUpdate({id : req.params.id}, req.body).then(function(){
-        Organization.findOne({id: req.params.id}).then(function(data){
+    Organization.findByIdAndUpdate({_id : req.params.id}, req.body).then(function(){
+        Organization.findOne({_id: req.params.id}).then(function(data){
             res.send(data);
         });
     });
@@ -22,12 +22,6 @@ exports.UpdateOrganization = function(req, res, next){
 
 exports.GetAllOrganization = function(req, res, next){
     Organization.find({idcv: req.params.idcv}).then(function(data){
-        res.send(data);
-    });
-}
-
-exports.GetOrganizationbyID = function(req, res, next){
-    Organization.findOne({idcv: req.params.idcv,id: req.params.id}).then(function(data){
         res.send(data);
     });
 }

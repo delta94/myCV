@@ -7,14 +7,14 @@ exports.CreateObjective = function(req, res, next){
 }
 
 exports.RemoveObjective = function(req, res, next){
-    Objective.findByIdAndRemove({id: req.params.id}).then(function(data){
+    Objective.findByIdAndRemove({_id: req.params.id}).then(function(data){
         res.send(data);
     }).catch(next);
 }
 
 exports.UpdateObjective = function(req, res, next){
-    Objective.findByIdAndUpdate({id : req.params.id}, req.body).then(function(){
-        Objective.findOne({id: req.params.id}).then(function(data){
+    Objective.findByIdAndUpdate({_id : req.params.id}, req.body).then(function(){
+        Objective.findOne({_id: req.params.id}).then(function(data){
             res.send(data);
         });
     });
@@ -22,12 +22,6 @@ exports.UpdateObjective = function(req, res, next){
 
 exports.GetAllObjective = function(req, res, next){
     Objective.find({idcv: req.params.idcv}).then(function(data){
-        res.send(data);
-    });
-}
-
-exports.GetObjectivebyID = function(req, res, next){
-    Objective.findOne({idcv: req.params.idcv,id: req.params.id}).then(function(data){
         res.send(data);
     });
 }

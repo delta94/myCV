@@ -7,14 +7,14 @@ exports.CreateProject = function(req, res, next){
 }
 
 exports.RemoveProject = function(req, res, next){
-    Project.findByIdAndRemove({id: req.params.id}).then(function(data){
+    Project.findByIdAndRemove({_id: req.params.id}).then(function(data){
         res.send(data);
     }).catch(next);
 }
 
 exports.UpdateProject = function(req, res, next){
-    Project.findByIdAndUpdate({id : req.params.id}, req.body).then(function(){
-        Project.findOne({id: req.params.id}).then(function(data){
+    Project.findByIdAndUpdate({_id : req.params.id}, req.body).then(function(){
+        Project.findOne({_id: req.params.id}).then(function(data){
             res.send(data);
         });
     });
@@ -22,12 +22,6 @@ exports.UpdateProject = function(req, res, next){
 
 exports.GetAllProject = function(req, res, next){
     Project.find({idcv: req.params.idcv}).then(function(data){
-        res.send(data);
-    });
-}
-
-exports.GetProjectbyID = function(req, res, next){
-    Project.findOne({idcv: req.params.idcv,id: req.params.id}).then(function(data){
         res.send(data);
     });
 }

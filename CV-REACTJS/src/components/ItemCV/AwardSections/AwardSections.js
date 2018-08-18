@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import AwardSection from './AwardSection';
 import * as actions from './../../../actions/actionAward';
+import uuidv1 from 'uuid';
 
 var language = "";
 var idcv = null;
@@ -37,7 +38,7 @@ class AwardSections extends Component {
 
   addNew = (number) =>{
     return {
-        _id : 5,
+        _id: uuidv1(),
         name : "TÊN GIẢI THƯỞNG",
         day : "Ngày Cấp",
         type : "Loại Giải",

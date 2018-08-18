@@ -1,7 +1,7 @@
 var Award = require("../model/award");
+const uuidv1 = require('uuid/v1');
 
 exports.CreateAward = function(req, res, next){
-
     Award.create(req.body).then(function(data){
         res.send(data);
     }).catch(next);
