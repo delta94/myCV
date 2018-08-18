@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const ReferenceSchema = mongoose.Schema({
-    id :{
+    _id :{
         type: String
     },
     name :{
@@ -17,7 +17,7 @@ const ReferenceSchema = mongoose.Schema({
         type: String
     },
     idcv :{
-        type: String
+        type: Number
     }
 },{ _id: false });
 

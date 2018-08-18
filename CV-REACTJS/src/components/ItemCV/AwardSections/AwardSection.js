@@ -23,7 +23,7 @@ class AwardSection extends Component {
   }
 
   render() {
-    console.log(this.props.children)
+    //console.log(this.props.children)
     return (
         <SubSection deleteSection={this.props.deleteSection}>
             <div className="row">

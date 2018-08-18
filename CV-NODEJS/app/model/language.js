@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const LanguageSchema = mongoose.Schema({
-    id :{
+    _id :{
         type: String
     },
     name :{
@@ -11,7 +11,7 @@ const LanguageSchema = mongoose.Schema({
         type: String
     },
     idcv :{
-        type: String
+        type: Number
     },
 },{ _id: false });
 

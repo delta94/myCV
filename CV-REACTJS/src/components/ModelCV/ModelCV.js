@@ -8,7 +8,7 @@ import InputField from './../ElementCV/InputField/InputField';
 import UserName from './../ItemCV/UserName/UserName';
 // import Project from './../ItemCV/ProjectSections/ProjectSections';
 import Award from './../ItemCV/AwardSections/AwardSections';
-// import Certificate from './../ItemCV/CertificateSections/CertificateSections';
+import Certificate from './../ItemCV/CertificateSections/CertificateSections';
 // import Language from './../ItemCV/LanguageSections/LanguageSections';
 // import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
 // import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
@@ -52,12 +52,12 @@ class ModelCV extends Component {
           </div>
           <div className="CV-main">
             <Award />
+            <Certificate />
             {/* <Skill />
             <Education />
             <Objective />
             <Socials />
             <Project />
-            <Certificate />
             <Language />
             <Organization />
             <Reference /> */}

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const CertificateSchema = mongoose.Schema({
-    id :{
+    _id :{
         type: String
     },
     name :{
@@ -14,7 +14,7 @@ const CertificateSchema = mongoose.Schema({
         type: String
     },
     idcv :{
-        type: String
+        type: Number
     },
 },{ _id: false });
 

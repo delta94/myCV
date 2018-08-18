@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const SkillSchema = mongoose.Schema({
-    id :{
+    _id :{
         type: String
     },
     name :{
@@ -11,7 +11,7 @@ const SkillSchema = mongoose.Schema({
         type: Number
     },
     idcv :{
-        type: String
+        type: Number
     },
 },{ _id: false });
 

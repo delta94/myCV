@@ -6,7 +6,6 @@ import * as actions from './../../../actions/actionAward';
 import uuidv1 from 'uuid';
 
 var language = "";
-var idcv = null;
 
 class AwardSections extends Component {
 
@@ -21,8 +20,6 @@ class AwardSections extends Component {
 
   shouldComponentUpdate(nextProps){
     language = nextProps.info.language;
-    idcv = nextProps.info._id;
-    //this.props.fetchAllAward(idcv);
     return true;
   }
 

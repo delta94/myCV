@@ -1,14 +1,14 @@
 const mongoose = require('mongoose');
 
 const ObjectiveSchema = mongoose.Schema({
-    id :{
+    _id :{
         type: String
     },
     name :{
         type: String
     },
     idcv :{
-        type: String
+        type: Number
     },
 },{ _id: false });
 
