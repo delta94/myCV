@@ -4,8 +4,8 @@ import idcv from './idcv';
 import language from './language';
 import certificate from './certificate';
 import education from './education';
-// import social from './social';
-// import skill from './skill';
+import social from './social';
+import skill from './skill';
 import objective from './objective';
 import organization from './organization';
 import project from './project';
@@ -22,8 +22,8 @@ const appReducers = combineReducers({
     organization,
     project,
     reference,
-    // skill,
-    // social,
+    skill,
+    social,
     info
 
 });

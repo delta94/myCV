@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Avatar from './../ElementCV/Avatar/Avatar';
 import Education from './../ItemCV/EducationSections/EducationSections';
-// import Socials from './../ItemCV/SocialSections/SocialSections';
+import Socials from './../ItemCV/SocialSections/SocialSections';
 import UserInfo from './../ItemCV/UserInfo/UserInfo';
 import Objective from './../ItemCV/ObjectiveSections/ObjectiveSections';
 import InputField from './../ElementCV/InputField/InputField';
@@ -12,7 +12,7 @@ import Certificate from './../ItemCV/CertificateSections/CertificateSections';
 import Language from './../ItemCV/LanguageSections/LanguageSections';
 import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
 import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
-// import Skill from './../ItemCV/SkillSections/SkillSections';
+import Skill from './../ItemCV/SkillSections/SkillSections';
 import './ModelCV.css';
 import {connect} from 'react-redux';
 import * as actions from './../../actions/info.action';
@@ -59,13 +59,8 @@ class ModelCV extends Component {
             <Organization />
             <Project />
             <Reference />
-            {/* <Skill />
-            
+            <Skill />
             <Socials />
-            
-            
-            
-             */}
           </div>
         </div>
       </div>
