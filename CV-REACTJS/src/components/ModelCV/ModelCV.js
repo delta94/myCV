@@ -6,7 +6,7 @@ import UserInfo from './../ItemCV/UserInfo/UserInfo';
 import Objective from './../ItemCV/ObjectiveSections/ObjectiveSections';
 import InputField from './../ElementCV/InputField/InputField';
 import UserName from './../ItemCV/UserName/UserName';
-// import Project from './../ItemCV/ProjectSections/ProjectSections';
+import Project from './../ItemCV/ProjectSections/ProjectSections';
 import Award from './../ItemCV/AwardSections/AwardSections';
 import Certificate from './../ItemCV/CertificateSections/CertificateSections';
 import Language from './../ItemCV/LanguageSections/LanguageSections';
@@ -57,10 +57,11 @@ class ModelCV extends Component {
             <Language />
             <Objective />
             <Organization />
+            <Project />
             {/* <Skill />
             
             <Socials />
-            <Project />
+            
             
             
             <Reference /> */}

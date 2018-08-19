@@ -8,7 +8,7 @@ import education from './education';
 // import skill from './skill';
 import objective from './objective';
 import organization from './organization';
-// import project from './project';
+import project from './project';
 // import reference from './reference';
 import info from './info';
 
@@ -20,7 +20,7 @@ const appReducers = combineReducers({
     education,
     objective,
     organization,
-    // project,
+    project,
     // reference,
     // skill,
     // social,
