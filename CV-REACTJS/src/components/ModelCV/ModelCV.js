@@ -3,13 +3,13 @@ import Avatar from './../ElementCV/Avatar/Avatar';
 import Education from './../ItemCV/EducationSections/EducationSections';
 // import Socials from './../ItemCV/SocialSections/SocialSections';
 import UserInfo from './../ItemCV/UserInfo/UserInfo';
-// import Objective from './../ItemCV/ObjectiveSections/ObjectiveSections';
+import Objective from './../ItemCV/ObjectiveSections/ObjectiveSections';
 import InputField from './../ElementCV/InputField/InputField';
 import UserName from './../ItemCV/UserName/UserName';
 // import Project from './../ItemCV/ProjectSections/ProjectSections';
 import Award from './../ItemCV/AwardSections/AwardSections';
 import Certificate from './../ItemCV/CertificateSections/CertificateSections';
-// import Language from './../ItemCV/LanguageSections/LanguageSections';
+import Language from './../ItemCV/LanguageSections/LanguageSections';
 // import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
 // import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
 // import Skill from './../ItemCV/SkillSections/SkillSections';
@@ -54,11 +54,13 @@ class ModelCV extends Component {
             <Education />
             <Award />
             <Certificate />
-            {/* <Skill />
+            <Language />
             <Objective />
+            {/* <Skill />
+            
             <Socials />
             <Project />
-            <Language />
+            
             <Organization />
             <Reference /> */}
           </div>

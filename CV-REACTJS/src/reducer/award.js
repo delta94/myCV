@@ -23,7 +23,6 @@ const award = (state = initialState, action) => {
             id = action.number;
             index = findIndex(state, id);
             state.splice(index,1);
-            state.number = state.number - 1;
             return [...state];
         case Types.ADD_AWARD:
             return [...state, action.award];
