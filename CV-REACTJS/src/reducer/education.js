@@ -7,7 +7,7 @@ var index = "";
 var findIndex = (tasks, id) =>{
     var result = -1;
     tasks.forEach((task,index)=>{
-        if(task.id === id){
+        if(task._id === id){
             result = index;
         }
     });
