@@ -10,7 +10,7 @@ import UserName from './../ItemCV/UserName/UserName';
 import Award from './../ItemCV/AwardSections/AwardSections';
 import Certificate from './../ItemCV/CertificateSections/CertificateSections';
 import Language from './../ItemCV/LanguageSections/LanguageSections';
-// import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
+import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
 // import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
 // import Skill from './../ItemCV/SkillSections/SkillSections';
 import './ModelCV.css';
@@ -56,12 +56,13 @@ class ModelCV extends Component {
             <Certificate />
             <Language />
             <Objective />
+            <Organization />
             {/* <Skill />
             
             <Socials />
             <Project />
             
-            <Organization />
+            
             <Reference /> */}
           </div>
         </div>
