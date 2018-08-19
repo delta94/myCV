@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Avatar from './../ElementCV/Avatar/Avatar';
-// import Education from './../ItemCV/EducationSections/EducationSections';
+import Education from './../ItemCV/EducationSections/EducationSections';
 // import Socials from './../ItemCV/SocialSections/SocialSections';
 import UserInfo from './../ItemCV/UserInfo/UserInfo';
 // import Objective from './../ItemCV/ObjectiveSections/ObjectiveSections';
@@ -51,10 +51,10 @@ class ModelCV extends Component {
             <UserInfo name="" />
           </div>
           <div className="CV-main">
+            <Education />
             <Award />
             <Certificate />
             {/* <Skill />
-            <Education />
             <Objective />
             <Socials />
             <Project />

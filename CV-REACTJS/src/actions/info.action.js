@@ -70,10 +70,10 @@ export const actUpdateMyPhone = (cv) =>{
   }
 }
 
-export const actUpdateEmail = (email) =>{
+export const actUpdateEmail = (cv) =>{
   return {
     type: Types.UPDATE_MY_EMAIL,
-    email
+    cv
   }
 }
 

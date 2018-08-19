@@ -3,7 +3,7 @@ import award from './award';
 import idcv from './idcv';
 // import language from './language';
 import certificate from './certificate';
-// import education from './education';
+import education from './education';
 // import social from './social';
 // import skill from './skill';
 // import objective from './objective';
@@ -17,7 +17,7 @@ const appReducers = combineReducers({
     award,
     idcv,
     certificate,
-    // education,
+    education,
     // objective,
     // organization,
     // project,
