@@ -10,10 +10,10 @@ const ReferenceSchema = mongoose.Schema({
     day :{
         type: String
     },
-    phone :{
+    type :{
         type: String
     },
-    email :{
+    by :{
         type: String
     },
     idcv :{

@@ -11,7 +11,7 @@ import Award from './../ItemCV/AwardSections/AwardSections';
 import Certificate from './../ItemCV/CertificateSections/CertificateSections';
 import Language from './../ItemCV/LanguageSections/LanguageSections';
 import Organization from './../ItemCV/OrganizationSections/OrganizationSections';
-// import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
+import Reference from './../ItemCV/ReferenceSections/ReferenceSections';
 // import Skill from './../ItemCV/SkillSections/SkillSections';
 import './ModelCV.css';
 import {connect} from 'react-redux';
@@ -58,13 +58,14 @@ class ModelCV extends Component {
             <Objective />
             <Organization />
             <Project />
+            <Reference />
             {/* <Skill />
             
             <Socials />
             
             
             
-            <Reference /> */}
+             */}
           </div>
         </div>
       </div>
