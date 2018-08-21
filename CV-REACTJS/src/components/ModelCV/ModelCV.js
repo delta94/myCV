@@ -20,9 +20,9 @@ import * as actions from './../../actions/info.action';
 var bgColors = "";
 var nameCV = "";
 var idcv = null;
-
+const items = [<Education />, <Award />, <Certificate />, <Language/>, <Objective />,
+  <Organization />, <Project />, <Reference />, <Skill />, <Socials />]
 class ModelCV extends Component {
-
 
   updateName = (data, id) =>{
     this.props.updateName(data, id)
@@ -36,11 +36,9 @@ class ModelCV extends Component {
   }
   componentWillMount(){
     this.props.fetchCV(this.props.idcv);
-    console.log(this.props)
   }
 
   render() {
-    
     return (
       <div className="ModelCV container" >
         <InputField data={(data,id) => this.updateName(data, idcv)}>{nameCV}</InputField>
@@ -51,16 +49,11 @@ class ModelCV extends Component {
             <UserInfo name="" />
           </div>
           <div className="CV-main">
-            <Education />
-            <Award />
-            <Certificate />
-            <Language />
-            <Objective />
-            <Organization />
-            <Project />
-            <Reference />
-            <Skill />
-            <Socials />
+            { items.map((item, index) =>
+              <div key={index}>
+                {item}
+              </div>
+            ) }
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 class CreateCV extends Component {
   componentWillMount(){
     this.props.getIDCV(this.getQueryParams(window.location.href));
+    this.props.fetchCV(this.getQueryParams(window.location.href));
   }
   getQueryParams(qs) {
     var re = /\w+\b/g;
@@ -16,19 +17,28 @@ class CreateCV extends Component {
   render() {
     return (
       <div>
-        <EditCV />
+        <EditCV info = {this.props.info}/>
         <ModelCV />
       </div>
     );
   }
 }
 
+const mapStateToProps = (state) =>{
+  return {
+    info : state.info
+  }
+}
+
 const mapDispatchToProps = (dispatch, props) =>{
   return{
+    fetchCV : (id) =>{
+      dispatch(actions.actFetchCVRequest(id));
+    },
     getIDCV : (id) =>{
       dispatch(actions.getIDCV(id));
     }
   }
 }
 
-export default connect(null,mapDispatchToProps)(CreateCV);
+export default connect(mapStateToProps,mapDispatchToProps)(CreateCV);

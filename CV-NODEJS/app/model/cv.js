@@ -43,6 +43,9 @@ const CVSchema = mongoose.Schema({
     idme :{
         type: String
     },
+    listComponent:{
+        type: Array
+    }
 },{ _id: false });
 
 const CV = mongoose.model('cv', CVSchema);

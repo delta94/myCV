@@ -12,8 +12,9 @@ class EditCV extends Component {
   constructor(props){
     super(props);
     this.state = {
-      font: "Arial"
+      font: this.props.info.font
     }
+    console.log(this.props.info.font)
   }
 
   onChange = (event) =>{
@@ -105,7 +106,7 @@ class EditCV extends Component {
 
 const mapStateToProps = (state) =>{
   return {
-    idcv : state.idcv,
+    idcv : state.idcv
   }
 }
 
