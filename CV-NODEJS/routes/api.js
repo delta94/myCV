@@ -18,6 +18,7 @@ router.get('/cv/:id', CV.GetCVbyID);
 router.post('/cv' ,CV.CreateCV);
 router.put('/cv/:id', CV.UpdateCV );
 router.delete('/cv/:id', CV.RemoveCV);
+router.post('/getListComponent/:id', CV.ChangePosition)
 
 //Award
 router.get('/award/:idcv', Award.GetAllAward);
