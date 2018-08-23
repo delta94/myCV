@@ -20,19 +20,48 @@ import * as actions from './../../actions/info.action';
 var bgColors = "";
 var nameCV = "";
 var idcv = null;
-const items = [<Education />, <Award />, <Certificate />, <Language/>, <Objective />,
-  <Organization />, <Project />, <Reference />, <Skill />, <Socials />]
+var items = [];
+var components = [];
+
+function changeToComponent(name){
+  switch (name) {
+    case 'Education':
+      return <Education />
+    case 'Award':
+      return <Award />
+    case 'Certificate':
+      return <Certificate />
+    case 'Language':
+      return <Language />
+    case 'Objective':
+      return <Objective />
+    case 'Organization':
+      return <Organization />
+    case 'Project':
+      return <Project />
+    case 'Reference':
+      return <Reference />
+    case 'Skill':
+      return <Skill />
+    default:
+      return <Socials />
+  }
+}
+
 class ModelCV extends Component {
 
   updateName = (data, id) =>{
     this.props.updateName(data, id)
   }
-  shouldComponentUpdate(nextProps){
+  componentWillReceiveProps(nextProps){
     //console.log(nextProps);
     bgColors = "#"+ nextProps.info.color ;
     nameCV = nextProps.info.namecv ;
-    //this.props.fetchCV(idcv);
-    return true;
+    items = nextProps.info.listComponent;
+    components = [];
+    items.forEach(e=>{
+      components = [...components, changeToComponent(e)]
+    });
   }
   componentWillMount(){
     this.props.fetchCV(this.props.idcv);
@@ -49,7 +78,7 @@ class ModelCV extends Component {
             <UserInfo name="" />
           </div>
           <div className="CV-main">
-            { items.map((item, index) =>
+            { components.map((item, index) =>
               <div key={index}>
                 {item}
               </div>
