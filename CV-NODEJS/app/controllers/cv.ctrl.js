@@ -45,6 +45,29 @@ function findIndex(tasks, id) {
 exports.ChangePosition = function(req, res, next){
     CV.findOne({_id: req.params.id}).then(function(data){
         let index = findIndex(data.listComponent, req.body._Name);
-        res.send(index.toString());
+        if(req.body._Direction === 'up' && index === 0)
+        {
+            return;
+        }
+        else if(req.body._Direction === 'down' && index === data.listComponent.length)
+        {
+            return;
+        }
+        else if(req.body._Direction === 'down')
+        {
+            let temp = data.listComponent[index];
+            data.listComponent[index] = data.listComponent[index + 1];
+            data.listComponent[index + 1] = temp;
+        }
+        else {
+            let temp = data.listComponent[index];
+            data.listComponent[index] = data.listComponent[index - 1];
+            data.listComponent[index - 1] = temp;
+        }
+        CV.findByIdAndUpdate({_id : req.params.id}, {'listComponent': data.listComponent}).then(function(){
+            CV.findOne({_id: req.params.id}).then(function(data){
+                res.send(data);
+            });
+        });
     })
 }
