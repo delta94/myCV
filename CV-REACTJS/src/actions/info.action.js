@@ -195,3 +195,13 @@ export const actChangeLanguageRequest = (text, id) =>{
     });
   }
 }
+export const actUpdateListComponent = (name, direction, id) =>{
+  return (dispatch) => {
+    return CallApi('getListComponent/'+ id, 'POST', {
+      "_Name" : name,
+      "_Direction": direction
+    }).then(res =>{
+       dispatch(actfetchCV(res.data));      
+    });
+  }
+}

@@ -28,7 +28,10 @@ class ContentField extends Component {
   onHover = () =>{
     if (this.state.disable === false)
     {
-      return <SectionAction addSection={this.props.addSection } />
+      return <SectionAction addSection={this.props.addSection } 
+        moveUpAward={this.props.moveUpAward}
+        moveDownAward={this.props.moveDownAward}
+      />
     }
 
   }

@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import AwardSection from './AwardSection';
 import * as actions from './../../../actions/actionAward';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -50,7 +51,10 @@ class AwardSections extends Component {
     
     return (
       <div className="Award-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addAward(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+            moveUpAward={(e)=>this.props.moveUpAward('Award', 'up', this.props.idcv)}
+            moveDownAward={(e)=>this.props.moveDownAward('Award', 'down', this.props.idcv)}
+            addSection={(e)=>this.props.addAward(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <AwardSection key={index} deleteSection = {(e)=>this.props.deleteAward(item._id)}  >{item}</AwardSection>
@@ -80,6 +84,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteAward : (index) =>{
       dispatch(actions.actDeleteAwardRequest(index));
+    },
+    moveUpAward : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownAward : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }
