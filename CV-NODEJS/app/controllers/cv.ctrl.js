@@ -69,5 +69,11 @@ exports.ChangePosition = function(req, res, next){
 exports.HiddenComponent = function(req, res, next){
     CV.findOne({_id: req.params.id}).then(function(data){
         let index = findIndex(data.listComponent, req.body._Name);
+        data.listComponent.splice(index, 1);
+        CV.findByIdAndUpdate({_id : req.params.id}, {'listComponent': data.listComponent}).then(function(){
+            CV.findOne({_id: req.params.id}).then(function(data){
+                res.send(data);
+            });
+        });
     });
 }

@@ -51,7 +51,8 @@ class SkillSections extends Component {
         <ContentField name ={ this.changeLanguage(language)}
           moveUp={(e)=>this.props.moveUpSkill('Skill', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownSkill('Skill', 'down', this.props.idcv)} 
-          addSection={(e)=>this.props.addSkill(this.addNew(number)) } >
+          addSection={(e)=>this.props.addSkill(this.addNew(number)) }
+          hidden={(e)=>this.props.hidenSkill('Skill', this.props.idcv)} >
           {
             items.map((item,index) => (
               <SkillSection key={index} deleteSection = {(e)=>this.props.deleteSkill(item._id)}  >{item}</SkillSection>
@@ -88,6 +89,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownSkill : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenSkill : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

@@ -54,7 +54,8 @@ class ReferenceSections extends Component {
         <ContentField name ={ this.changeLanguage(language)}
           moveUp={(e)=>this.props.moveUpReference('Reference', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownReference('Reference', 'down', this.props.idcv)} 
-          addSection={(e)=>this.props.addReference(this.addNew(number)) } >
+          addSection={(e)=>this.props.addReference(this.addNew(number)) } 
+          hidden={(e)=>this.props.hidenReference('Reference', this.props.idcv)}>
           {
             items.map((item,index) => (
               <ReferenceSection key={index} deleteSection = {(e)=>this.props.deleteReference(item._id)}  >{item}</ReferenceSection>
@@ -91,6 +92,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownReference : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenReference : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

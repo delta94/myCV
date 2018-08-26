@@ -55,7 +55,8 @@ class OrganizationSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
           moveUp={(e)=>this.props.moveUpOrganization('Organization', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownOrganization('Organization', 'down', this.props.idcv)}
-          addSection={(e)=>this.props.addOrganization(this.addNew(number)) } >
+          addSection={(e)=>this.props.addOrganization(this.addNew(number)) }
+          hidden={(e)=>this.props.hidenOrganization('Organization', this.props.idcv)} >
           {
             items.map((item,index) => (
               <OrganizationSection key={index} deleteSection = {(e)=>this.props.deleteOrganization(item._id)}  >{item}</OrganizationSection>
@@ -93,6 +94,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownOrganization : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenOrganization : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

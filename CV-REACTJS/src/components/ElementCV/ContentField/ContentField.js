@@ -31,6 +31,7 @@ class ContentField extends Component {
       return <SectionAction addSection={this.props.addSection } 
         moveUp={this.props.moveUp}
         moveDown={this.props.moveDown}
+        hidden={this.props.hidden}
       />
     }
 

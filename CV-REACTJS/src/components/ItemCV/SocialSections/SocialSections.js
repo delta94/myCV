@@ -49,7 +49,8 @@ class SocialSections extends Component {
         <ContentField name ={ this.changeLanguage(language)}
           moveUp={(e)=>this.props.moveUpSocial('Social', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownSocial('Social', 'down', this.props.idcv)} 
-          addSection={(e)=>this.props.addSocial(this.addNew(number)) } >
+          addSection={(e)=>this.props.addSocial(this.addNew(number)) }
+          hidden={(e)=>this.props.hidenSocial('Social', this.props.idcv)} >
           {
             items.map((item,index) => (
               <SocialSection key={index} deleteSection = {(e)=>this.props.deleteSocial(item._id)}  >{item}</SocialSection>
@@ -85,6 +86,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownSocial : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenSocial : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

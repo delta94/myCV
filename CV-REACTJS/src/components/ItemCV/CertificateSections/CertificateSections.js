@@ -50,7 +50,8 @@ class CertificateSections extends Component {
         <ContentField name ={ this.changeLanguage(language) } 
             moveUp={(e)=>this.props.moveUpCertificate('Certificate', 'up', this.props.idcv)}
             moveDown={(e)=>this.props.moveDownCertificate('Certificate', 'down', this.props.idcv)}
-            addSection={(e)=>this.props.addCertificate(this.addNew(number)) }>
+            addSection={(e)=>this.props.addCertificate(this.addNew(number)) }
+            hidden={(e)=>this.props.hidenCertificate('Certificate', this.props.idcv)}>
         {
             items.map((item,index) => (
               <CertificateSection key={index} deleteSection = {(e)=>this.props.deleteCertificate(item._id)}  >{item}</CertificateSection>
@@ -87,6 +88,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownCertificate : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenCertificate : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

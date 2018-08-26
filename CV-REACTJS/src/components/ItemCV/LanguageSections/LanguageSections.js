@@ -51,7 +51,8 @@ class LanguageSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
           moveUp={(e)=>this.props.moveUpLanguage('Language', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownLanguage('Language', 'down', this.props.idcv)}
-          addSection={(e)=>this.props.addLanguage(this.addNew(number)) } >
+          addSection={(e)=>this.props.addLanguage(this.addNew(number)) } 
+          hidden={(e)=>this.props.hidenLanguage('Language', this.props.idcv)}>
           {
             items.map((item,index) => (
               <LanguageSection key={index} deleteSection = {(e)=>this.props.deleteLanguage(item._id)}>{item}</LanguageSection>
@@ -88,6 +89,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownLanguage : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenLanguage : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

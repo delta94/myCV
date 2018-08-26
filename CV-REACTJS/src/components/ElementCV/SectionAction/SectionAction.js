@@ -12,10 +12,14 @@ class SectionAction extends Component {
             <i className="fas fa-caret-down section-action" ></i>
         </div>
         <div className="SectionAction-wraper">
-            <div className="AddSectionAction section-action" onMouseDown={this.props.addSection }  >Thêm...</div>
+            <div className="AddSectionAction section-action" onMouseDown={this.props.addSection }  >
+              <i className="fa fa-plus" ></i>
+            </div>
         </div>
         <div className="SectionAction-wraper-b">
-            <div className="AddSectionAction section-action ">Ẩn</div>
+            <div className="AddSectionAction section-action " onMouseDown={this.props.hidden}>
+              <i className="fa fa-eye-slash" ></i>
+            </div>
         </div>
       </div>
     );

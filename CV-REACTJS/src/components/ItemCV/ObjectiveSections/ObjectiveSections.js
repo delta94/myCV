@@ -50,7 +50,8 @@ class ObjectiveSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
           moveUp={(e)=>this.props.moveUpObjective('Objective', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownObjective('Objective', 'down', this.props.idcv)}
-          addSection={(e)=>this.props.addObjective(this.addNew(number)) } >
+          addSection={(e)=>this.props.addObjective(this.addNew(number)) }
+          hidden={(e)=>this.props.hidenObjective('Objective', this.props.idcv)} >
           {
             items.map((item,index) => (
               <ObjectiveSection key={index} deleteSection = {(e)=>this.props.deleteObjective(item._id)}  >{item}</ObjectiveSection>
@@ -86,6 +87,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownObjective : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenObjective : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

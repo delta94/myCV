@@ -54,7 +54,8 @@ class AwardSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
             moveUp={(e)=>this.props.moveUpAward('Award', 'up', this.props.idcv)}
             moveDown={(e)=>this.props.moveDownAward('Award', 'down', this.props.idcv)}
-            addSection={(e)=>this.props.addAward(this.addNew(number)) } >
+            addSection={(e)=>this.props.addAward(this.addNew(number)) }
+            hidden={(e)=>this.props.hidenAward('Award', this.props.idcv)} >
           {
             items.map((item,index) => (
               <AwardSection key={index} deleteSection = {(e)=>this.props.deleteAward(item._id)}  >{item}</AwardSection>
@@ -90,6 +91,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownAward : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenAward : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

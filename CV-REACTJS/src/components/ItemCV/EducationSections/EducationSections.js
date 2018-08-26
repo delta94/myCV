@@ -53,7 +53,8 @@ class EducationSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
             moveUp={(e)=>this.props.moveUpEducation('Education', 'up', this.props.idcv)}
             moveDown={(e)=>this.props.moveDownEducation('Education', 'down', this.props.idcv)}
-            addSection={(e)=>this.props.addEducation(this.addNew(number)) } >
+            addSection={(e)=>this.props.addEducation(this.addNew(number)) }
+            hidden={(e)=>this.props.hidenEducation('Education', this.props.idcv)} >
           {
             items.map((item,index) => (
               <EducationSection key={index} deleteSection = {(e)=>this.props.deleteEducation(item._id)}>{item}</EducationSection>
@@ -90,6 +91,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownEducation : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenEducation : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

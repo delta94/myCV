@@ -54,7 +54,8 @@ class ProjectSections extends Component {
         <ContentField name ={ this.changeLanguage(language)} 
           moveUp={(e)=>this.props.moveUpProject('Project', 'up', this.props.idcv)}
           moveDown={(e)=>this.props.moveDownProject('Project', 'down', this.props.idcv)}
-          addSection={(e)=>this.props.addProject(this.addNew(number)) } >
+          addSection={(e)=>this.props.addProject(this.addNew(number)) }
+          hidden={(e)=>this.props.hidenProject('Project', this.props.idcv)} >
           {
             items.map((item,index) => (
               <ProjectSection key={index} deleteSection = {(e)=>this.props.deleteProject(item._id)}  >{item}</ProjectSection>
@@ -91,6 +92,9 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     moveDownProject : (name, direction, idcv) =>{
       dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    hidenProject : (name, idcv) =>{
+      dispatch(actionsCV.actHiddenComponent(name, idcv));
     }
   }
 }

@@ -123,3 +123,12 @@ export const actUpdateListComponent = (name, direction, id) =>{
     });
   }
 }
+export const actHiddenComponent = (name, id) =>{
+  return (dispatch) => {
+    return CallApi('hiddenComponent/'+ id, 'POST', {
+      "_Name" : name,
+    }).then(res =>{
+       dispatch(actfetchCV(res.data));      
+    });
+  }
+}
