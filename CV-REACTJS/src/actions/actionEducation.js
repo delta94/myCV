@@ -84,7 +84,7 @@ export const actUpdateTypeEducationRequest = (text, id) =>{
 
 export const actUpdateDescriptionEducationRequest = (text, id) =>{
   return (dispatch) => {
-    return CallApi('education/'+ id, 'PUT', {by : text}).then(res =>{
+    return CallApi('education/'+ id, 'PUT', {description : text}).then(res =>{
        dispatch(updateDescriptionEducation(res.data));      
     });
   }
