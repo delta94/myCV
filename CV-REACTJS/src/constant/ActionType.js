@@ -1,11 +1,5 @@
 export const GET_ID_CV = "GET_ID_CV";
 
-export const CHANGE_LANGGUAGE = "CHANGE_LANGGUAGE";
-export const CHANGE_COLOR = "CHANGE_COLOR";
-export const CHANGE_FONT = "CHANGE_FONT";
-export const CHANGE_SIZE = "CHANGE_SIZE";
-export const CHANGE_ARROW = "CHANGE_ARROW";
-
 export const FETCH_AWARD = "FETCH_AWARD";
 export const ADD_AWARD = "ADD_AWARD";
 export const DELETE_AWARD = "DELETE_AWARD";
@@ -81,10 +75,3 @@ export const UPDATE_NAME_SOCIAL = "UPDATE_NAME_SOCIAL";
 export const CHANGE_CV = "CHANGE_CV";
 export const SAVE_CV = "SAVE_CV";
 export const FETCH_CV = "FETCH_CV";
-export const UPDATE_BIRTH_DAY = "UPDATE_BIRTH_DAY";
-export const UPDATE_MY_PHONE = "UPDATE_MY_PHONE";
-export const UPDATE_MY_ADDRESS = "UPDATE_MY_ADDRESS";
-export const UPDATE_MY_EMAIL = "UPDATE_MY_EMAIL";
-export const UPDATE_MY_NAME = "UPDATE_MY_NAME";
-export const UPDATE_MY_NAMECV = "UPDATE_MY_NAMECV";
-export const UPDATE_MY_CHOOSE = "UPDATE_MY_CHOOSE";
