@@ -6,15 +6,16 @@ import Arrow from './Arrow/Arrow';
 import Color from './Color/Color';
 import {connect} from 'react-redux';
 import * as actions from './../../actions/info.action';
+import AddAndSort from './Add/AddAndSort';
 
 class EditCV extends Component {
 
   constructor(props){
     super(props);
     this.state = {
-      font: this.props.info.font
+      font: this.props.info.font,
+      isShowAdd : false
     }
-    console.log(this.props.info.font)
   }
 
   onChange = (event) =>{
@@ -25,6 +26,18 @@ class EditCV extends Component {
       [name] : value
     });
     this.props.changeFont(value,this.props.idcv);
+  }
+
+  isShowAdd = () =>{
+    this.setState({
+      isShowAdd : !this.state.isShowAdd
+    });
+  }
+
+  showAdd = () =>{
+    if(this.state.isShowAdd === true){
+      return <AddAndSort modalIsOpen={this.state.isShowAdd} turnOffModal={this.isShowAdd}/>
+    }
   }
 
   render() {
@@ -61,7 +74,7 @@ class EditCV extends Component {
             <Arrow />
           </div>
 
-          <div className="add-cv col-md-1">
+          <div className="add-cv col-md-1" onClick={this.isShowAdd}>
             <label >Thêm mục</label>
             <span className="arrows arrows-2"><i className="fas fa-plus-circle"></i></span>
           </div>
@@ -97,7 +110,7 @@ class EditCV extends Component {
               <span className="editor-control-item editor-control-undo"><i className="fas fa-undo"></i></span>
               <span className="editor-control-item editor-control-redo"><i className="fas fa-redo"></i></span>
             </div>
-
+            {this.showAdd()}
         </div>
       </div>
     );
