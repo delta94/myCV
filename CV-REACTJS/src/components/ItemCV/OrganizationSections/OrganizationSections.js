@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import OrganizationSection from './OrganizationSection';
 import * as actions from './../../../actions/actionOrganization';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -51,7 +52,10 @@ class OrganizationSections extends Component {
     return (
       <div className="Organization-Sections">
         <div className="Organization-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addOrganization(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+          moveUp={(e)=>this.props.moveUpOrganization('Organization', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownOrganization('Organization', 'down', this.props.idcv)}
+          addSection={(e)=>this.props.addOrganization(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <OrganizationSection key={index} deleteSection = {(e)=>this.props.deleteOrganization(item._id)}  >{item}</OrganizationSection>
@@ -83,6 +87,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteOrganization : (index) =>{
       dispatch(actions.actDeleteOrganizationRequest(index));
+    },
+    moveUpOrganization : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownOrganization : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

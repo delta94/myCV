@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import ProjectSection from './ProjectSection';
 import * as actions from './../../../actions/actionProject';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -50,7 +51,10 @@ class ProjectSections extends Component {
     var {number} = this.state;
     return (
       <div className="Project-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addProject(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+          moveUp={(e)=>this.props.moveUpProject('Project', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownProject('Project', 'down', this.props.idcv)}
+          addSection={(e)=>this.props.addProject(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <ProjectSection key={index} deleteSection = {(e)=>this.props.deleteProject(item._id)}  >{item}</ProjectSection>
@@ -81,6 +85,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteProject : (index) =>{
       dispatch(actions.actDeleteProjectRequest(index));
+    },
+    moveUpProject : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownProject : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

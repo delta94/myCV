@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import ContentField from './../../ElementCV/ContentField/ContentField';
 import CertificateSection from './CertificateSection';
-import * as actions from './../../../actions/actionCertificate'
+import * as actions from './../../../actions/actionCertificate';
+import * as actionsCV from './../../../actions/info.action';
 import {connect} from 'react-redux';
 import uuidv1 from 'uuid';
 
@@ -46,7 +47,10 @@ class CertificateSections extends Component {
     var {number} = this.state;
     return (
       <div className="Certificate-Sections">
-        <ContentField name ={ this.changeLanguage(language) } addSection={(e)=>this.props.addCertificate(this.addNew(number)) }>
+        <ContentField name ={ this.changeLanguage(language) } 
+            moveUp={(e)=>this.props.moveUpCertificate('Certificate', 'up', this.props.idcv)}
+            moveDown={(e)=>this.props.moveDownCertificate('Certificate', 'down', this.props.idcv)}
+            addSection={(e)=>this.props.addCertificate(this.addNew(number)) }>
         {
             items.map((item,index) => (
               <CertificateSection key={index} deleteSection = {(e)=>this.props.deleteCertificate(item._id)}  >{item}</CertificateSection>
@@ -77,6 +81,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteCertificate : (index) =>{
       dispatch(actions.actDeleteCertificateRequest(index));
+    },
+    moveUpCertificate : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownCertificate : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

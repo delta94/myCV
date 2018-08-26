@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import SkillSection from './SkillSection';
 import * as actions from './../../../actions/actionSkill';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -47,7 +48,10 @@ class SkillSections extends Component {
     var {number} = this.state;
     return (
       <div className="Skill-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addSkill(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)}
+          moveUp={(e)=>this.props.moveUpSkill('Skill', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownSkill('Skill', 'down', this.props.idcv)} 
+          addSection={(e)=>this.props.addSkill(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <SkillSection key={index} deleteSection = {(e)=>this.props.deleteSkill(item._id)}  >{item}</SkillSection>
@@ -78,6 +82,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteSkill : (index) =>{
       dispatch(actions.actDeleteSkillRequest(index));
+    },
+    moveUpSkill : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownSkill : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

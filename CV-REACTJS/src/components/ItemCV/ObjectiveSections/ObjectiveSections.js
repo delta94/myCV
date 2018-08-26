@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import ObjectiveSection from './ObjectiveSection';
 import * as actions from './../../../actions/actionObjective';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -46,7 +47,10 @@ class ObjectiveSections extends Component {
     var {number} = this.state;
     return (
       <div className="Objective-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addObjective(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+          moveUp={(e)=>this.props.moveUpObjective('Objective', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownObjective('Objective', 'down', this.props.idcv)}
+          addSection={(e)=>this.props.addObjective(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <ObjectiveSection key={index} deleteSection = {(e)=>this.props.deleteObjective(item._id)}  >{item}</ObjectiveSection>
@@ -76,6 +80,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteObjective : (index) =>{
       dispatch(actions.actDeleteObjectiveRequest(index));
+    },
+    moveUpObjective : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownObjective : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

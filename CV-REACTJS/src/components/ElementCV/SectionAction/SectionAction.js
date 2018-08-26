@@ -5,10 +5,10 @@ class SectionAction extends Component {
   render() {
     return (
       <div className="SectionAction row">
-        <div className="SectionAction-wraper" onMouseDown={this.props.moveUpAward}>
+        <div className="SectionAction-wraper" onMouseDown={this.props.moveUp}>
             <i className="fas fa-caret-up section-action" ></i>
         </div>
-        <div className="SectionAction-wraper" onMouseDown={this.props.moveDownAward}>
+        <div className="SectionAction-wraper" onMouseDown={this.props.moveDown}>
             <i className="fas fa-caret-down section-action" ></i>
         </div>
         <div className="SectionAction-wraper">

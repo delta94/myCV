@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import LanguageSection from './LanguageSection';
 import * as actions from './../../../actions/actionLanguage';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -47,7 +48,10 @@ class LanguageSections extends Component {
     var {number} = this.state;
     return (
       <div className="Language-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addLanguage(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+          moveUp={(e)=>this.props.moveUpLanguage('Language', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownLanguage('Language', 'down', this.props.idcv)}
+          addSection={(e)=>this.props.addLanguage(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <LanguageSection key={index} deleteSection = {(e)=>this.props.deleteLanguage(item._id)}>{item}</LanguageSection>
@@ -78,6 +82,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteLanguage : (index) =>{
       dispatch(actions.actDeleteLanguageRequest(index));
+    },
+    moveUpLanguage : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownLanguage : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

@@ -52,8 +52,8 @@ class AwardSections extends Component {
     return (
       <div className="Award-Sections">
         <ContentField name ={ this.changeLanguage(language)} 
-            moveUpAward={(e)=>this.props.moveUpAward('Award', 'up', this.props.idcv)}
-            moveDownAward={(e)=>this.props.moveDownAward('Award', 'down', this.props.idcv)}
+            moveUp={(e)=>this.props.moveUpAward('Award', 'up', this.props.idcv)}
+            moveDown={(e)=>this.props.moveDownAward('Award', 'down', this.props.idcv)}
             addSection={(e)=>this.props.addAward(this.addNew(number)) } >
           {
             items.map((item,index) => (

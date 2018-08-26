@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import ReferenceSection from './ReferenceSection';
 import * as actions from './../../../actions/actionReference';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -50,7 +51,10 @@ class ReferenceSections extends Component {
     var {number} = this.state;
     return (
       <div className="Reference-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addReference(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)}
+          moveUp={(e)=>this.props.moveUpReference('Reference', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownReference('Reference', 'down', this.props.idcv)} 
+          addSection={(e)=>this.props.addReference(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <ReferenceSection key={index} deleteSection = {(e)=>this.props.deleteReference(item._id)}  >{item}</ReferenceSection>
@@ -81,6 +85,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteReference : (index) =>{
       dispatch(actions.actDeleteReferenceRequest(index));
+    },
+    moveUpReference : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownReference : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

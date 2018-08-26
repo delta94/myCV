@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import EducationSection from './EducationSection';
 import * as actions from './../../../actions/actionEducation';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -49,7 +50,10 @@ class EducationSections extends Component {
 
     return (
       <div className="Education-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addEducation(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)} 
+            moveUp={(e)=>this.props.moveUpEducation('Education', 'up', this.props.idcv)}
+            moveDown={(e)=>this.props.moveDownEducation('Education', 'down', this.props.idcv)}
+            addSection={(e)=>this.props.addEducation(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <EducationSection key={index} deleteSection = {(e)=>this.props.deleteEducation(item._id)}>{item}</EducationSection>
@@ -80,6 +84,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteEducation : (index) =>{
       dispatch(actions.actDeleteEducationRequest(index));
+    },
+    moveUpEducation : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownEducation : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

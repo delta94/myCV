@@ -3,6 +3,7 @@ import ContentField from './../../ElementCV/ContentField/ContentField';
 import {connect} from 'react-redux';
 import SocialSection from './SocialSection';
 import * as actions from './../../../actions/actionSocial';
+import * as actionsCV from './../../../actions/info.action';
 import uuidv1 from 'uuid';
 
 var language = "";
@@ -45,7 +46,10 @@ class SocialSections extends Component {
     var {number} = this.state;
     return (
       <div className="Social-Sections">
-        <ContentField name ={ this.changeLanguage(language)} addSection={(e)=>this.props.addSocial(this.addNew(number)) } >
+        <ContentField name ={ this.changeLanguage(language)}
+          moveUp={(e)=>this.props.moveUpSocial('Social', 'up', this.props.idcv)}
+          moveDown={(e)=>this.props.moveDownSocial('Social', 'down', this.props.idcv)} 
+          addSection={(e)=>this.props.addSocial(this.addNew(number)) } >
           {
             items.map((item,index) => (
               <SocialSection key={index} deleteSection = {(e)=>this.props.deleteSocial(item._id)}  >{item}</SocialSection>
@@ -75,6 +79,12 @@ const mapDispatchToProps = (dispatch, props) =>{
     },
     deleteSocial : (index) =>{
       dispatch(actions.actDeleteSocialRequest(index));
+    },
+    moveUpSocial : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
+    },
+    moveDownSocial : (name, direction, idcv) =>{
+      dispatch(actionsCV.actUpdateListComponent(name, direction, idcv));
     }
   }
 }

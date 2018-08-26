@@ -29,8 +29,8 @@ class ContentField extends Component {
     if (this.state.disable === false)
     {
       return <SectionAction addSection={this.props.addSection } 
-        moveUpAward={this.props.moveUpAward}
-        moveDownAward={this.props.moveDownAward}
+        moveUp={this.props.moveUp}
+        moveDown={this.props.moveDown}
       />
     }
 
