@@ -8,6 +8,13 @@ export const getIDCV = (id) =>{
   }
 }
 
+export const actfetchComponent = (list) =>{
+  return {
+    type: Types.FETCH_COMPONENT,
+    list
+  }
+}
+
 export const actfetchCV = (cv) =>{
   return {
     type: Types.FETCH_CV,
@@ -130,5 +137,14 @@ export const actHiddenComponent = (name, id) =>{
     }).then(res =>{
        dispatch(actfetchCV(res.data));      
     });
+  }
+}
+export const actListComponent = (id) =>{
+  return (dispatch) =>{
+    return CallApi('getListCheck/' + id, "GET",{
+
+    }).then(res =>{
+      dispatch(actfetchComponent(res.data))
+    })
   }
 }

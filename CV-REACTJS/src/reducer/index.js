@@ -11,6 +11,7 @@ import organization from './organization';
 import project from './project';
 import reference from './reference';
 import info from './info';
+import listComponent from './listComponent';
 
 const appReducers = combineReducers({
     language,
@@ -24,7 +25,8 @@ const appReducers = combineReducers({
     reference,
     skill,
     social,
-    info
+    info,
+    listComponent
 
 });
 

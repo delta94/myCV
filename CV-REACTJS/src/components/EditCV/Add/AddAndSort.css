@@ -1,0 +1,11 @@
+.HeaderModal {
+    background-color: whitesmoke;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+}
+.listItem {
+    padding: 10px 50px;
+    border: 1px solid black;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}

@@ -77,3 +77,24 @@ exports.HiddenComponent = function(req, res, next){
         });
     });
 }
+const fullList = ["Education", "Skill", "Certificate", "Language", "Award", "Organization", 
+"Reference","Objective", "Project", "Socials"];
+exports.CheckComponent = function(req, res, next){
+    CV.findOne({_id: req.params.id}).then(function(data) {
+        let array = [];
+        let flag = 0;
+        fullList.forEach(e=>{
+            for( let i = 0 ; i < 10 ; i++){
+                if(e === data.listComponent[i]){
+                    array = [...array, {Name: e, Check: true}]
+                    flag = 1;
+                }
+            }
+            if(flag === 0){
+                array = [...array, {Name: e, Check: false}]
+            }
+            flag = 0;
+        });
+        res.send(array)
+    });
+}
