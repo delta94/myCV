@@ -21,6 +21,7 @@ router.delete('/cv/:id', CV.RemoveCV);
 router.post('/getListComponent/:id', CV.ChangePosition);
 router.post('/hiddenComponent/:id', CV.HiddenComponent);
 router.get('/getListCheck/:id', CV.CheckComponent);
+router.get('/getAllComponent/:id', CV.GetAllComponent);
 
 //Award
 router.get('/award/:idcv', Award.GetAllAward);

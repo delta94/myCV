@@ -15,7 +15,7 @@ const customStyles = {
       marginRight     : '-50%',
       transform       : 'translate(-50%, -50%)',
       padding         : '0px',
-      width           : '500px'
+      width           : '700px'
     }
 };
 
@@ -24,7 +24,7 @@ class AddAndSort extends Component {
         this.props.turnOffModal()
     }
     componentWillMount(){
-        console.log(this.props.listComponent)
+        console.log(this.props.info)
     }
     render(){
         return (
@@ -38,18 +38,25 @@ class AddAndSort extends Component {
                             <div className="HeaderModal text-center">
                                 <h5>Chọn mục hiển thị</h5>
                             </div>
-                            <div className="listItem">
-                            {
-                                this.props.listComponent.map((item, index)=>(
-                                    <div className="row" key={index}>
-                                        <div className="col-md-4 text-right">
-                                            <input type="checkbox" name="select" 
-                                            defaultChecked={item.Check} />
+                            <div className="row">
+                                <div className="listItem col-md-6">
+                                {
+                                    this.props.listComponent.map((item, index)=>(
+                                        <div className="row" key={index}>
+                                            <div className="text-name col-md-12 text-center">{item}</div>
                                         </div>
-                                        <div className="col-md-8">{item.Name}</div>
-                                    </div>
-                                ))
-                            }
+                                    ))
+                                }
+                                </div>
+                                <div className="listItem col-md-6">
+                                {
+                                    this.props.info.listComponent.map((item, index)=>(
+                                        <div className="row" key={index}>
+                                            <div className="text-name col-md-12 text-center">{item}</div>
+                                        </div>
+                                    ))
+                                }
+                                </div>
                             </div>
                         </div>                        
                 </Modal>
@@ -61,7 +68,8 @@ class AddAndSort extends Component {
 const mapStateToProps = (state) =>{
     return {
         listComponent : state.listComponent,
-        idcv : state.idcv
+        idcv : state.idcv,
+        info : state.info
     }
 }
   

@@ -148,3 +148,12 @@ export const actListComponent = (id) =>{
     })
   }
 }
+export const actAllListComponent = (id) =>{
+  return (dispatch) =>{
+    return CallApi('getAllComponent/' + id, "GET",{
+
+    }).then(res=>{
+      dispatch(actfetchComponent(res.data));
+    })
+  }
+}

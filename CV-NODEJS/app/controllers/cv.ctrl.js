@@ -98,3 +98,9 @@ exports.CheckComponent = function(req, res, next){
         res.send(array)
     });
 }
+exports.GetAllComponent = function(req, res, next){
+    CV.findOne({_id: req.params.id}).then(function(data) {
+        let array = fullList.filter(f => !data.listComponent.includes(f));
+        res.send(array);
+    });
+}

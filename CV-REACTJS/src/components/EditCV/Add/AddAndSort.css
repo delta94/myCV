@@ -4,8 +4,11 @@
     margin-bottom: 20px;
 }
 .listItem {
-    padding: 10px 50px;
+    padding: 25px 25px;
     border: 1px solid black;
-    margin-bottom: 15px;
+    margin: 10px 0px;
     border-radius: 10px;
+}
+.text-name:hover {
+    background-color: #ff7e7e;
 }
