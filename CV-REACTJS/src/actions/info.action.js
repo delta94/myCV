@@ -139,6 +139,15 @@ export const actHiddenComponent = (name, id) =>{
     });
   }
 }
+export const actAppearComponent = (name, id) =>{
+  return (dispatch) => {
+    return CallApi('appearComponent/'+ id, 'POST', {
+      "_Name" : name,
+    }).then(res =>{
+       dispatch(actfetchCV(res.data));      
+    });
+  }
+}
 export const actListComponent = (id) =>{
   return (dispatch) =>{
     return CallApi('getListCheck/' + id, "GET",{
@@ -148,12 +157,12 @@ export const actListComponent = (id) =>{
     })
   }
 }
-export const actAllListComponent = (id) =>{
-  return (dispatch) =>{
-    return CallApi('getAllComponent/' + id, "GET",{
+// export const actAllListComponent = (id) =>{
+//   return (dispatch) =>{
+//     return CallApi('getAllComponent/' + id, "GET",{
 
-    }).then(res=>{
-      dispatch(actfetchComponent(res.data));
-    })
-  }
-}
+//     }).then(res=>{
+//       dispatch(actfetchComponent(res.data));
+//     })
+//   }
+// }

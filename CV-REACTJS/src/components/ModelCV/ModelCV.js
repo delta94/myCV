@@ -94,7 +94,7 @@ class ModelCV extends Component {
 const mapStateToProps = (state) =>{
   return {
     info : state.info,
-    idcv : state.idcv
+    idcv : state.idcv,
   }
 }
 
@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch, props) =>{
   return{
     fetchCV : (id) =>{
       dispatch(actions.actFetchCVRequest(id));
-      dispatch(actions.actAllListComponent(id));
+      dispatch(actions.actListComponent(id));
     },
     updateName : (text, id) =>{
       dispatch(actions.actUpdateNameCVRequest(text,id));

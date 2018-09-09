@@ -66,6 +66,17 @@ exports.ChangePosition = function(req, res, next){
     })
 }
 
+exports.AppearComponent = function(req, res, next){
+    CV.findOne({_id: req.params.id}).then(function(data){
+        data.listComponent = [...data.listComponent, req.body._Name]
+        CV.findByIdAndUpdate({_id : req.params.id}, {'listComponent': data.listComponent}).then(function(){
+            CV.findOne({_id: req.params.id}).then(function(data){
+                res.send(data);
+            });
+        });
+    });
+}
+
 exports.HiddenComponent = function(req, res, next){
     CV.findOne({_id: req.params.id}).then(function(data){
         let index = findIndex(data.listComponent, req.body._Name);

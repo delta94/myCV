@@ -20,6 +20,7 @@ router.put('/cv/:id', CV.UpdateCV );
 router.delete('/cv/:id', CV.RemoveCV);
 router.post('/getListComponent/:id', CV.ChangePosition);
 router.post('/hiddenComponent/:id', CV.HiddenComponent);
+router.post('/appearComponent/:id', CV.AppearComponent);
 router.get('/getListCheck/:id', CV.CheckComponent);
 router.get('/getAllComponent/:id', CV.GetAllComponent);
 
