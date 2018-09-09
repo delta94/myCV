@@ -24,7 +24,7 @@ class AddAndSort extends Component {
         this.props.turnOffModal()
     }
     componentWillMount(){
-        console.log(this.props.info)
+        console.log(this.props.listComponent)
     }
     render(){
         return (
@@ -43,7 +43,8 @@ class AddAndSort extends Component {
                                 {
                                     this.props.listComponent.map((item, index)=>(
                                         <div className="row" key={index}>
-                                            <div className="text-name col-md-12 text-center">{item}</div>
+                                            <div className="text-name col-md-12 text-center" 
+                                            onClick={() => {this.props.appear(item, this.props.idcv)}}>{item}</div>
                                         </div>
                                     ))
                                 }
@@ -52,7 +53,8 @@ class AddAndSort extends Component {
                                 {
                                     this.props.info.listComponent.map((item, index)=>(
                                         <div className="row" key={index}>
-                                            <div className="text-name col-md-12 text-center">{item}</div>
+                                            <div className="text-name col-md-12 text-center"
+                                            onClick={() => {this.props.hidden(item, this.props.idcv)}}>{item}</div>
                                         </div>
                                     ))
                                 }
@@ -78,6 +80,14 @@ const mapDispatchToProps = (dispatch, props) =>{
         fetchCV : (id) =>{
             dispatch(actions.actFetchCVRequest(id));
         },
+        hidden : (name, id) =>{
+            dispatch(actions.actHiddenComponent(name, id));
+            dispatch(actions.actAllListComponent(id));
+        },
+        appear : (name, id) =>{
+            dispatch(actions.actAppearComponent(name, id));
+            dispatch(actions.actAllListComponent(id));
+        }
     }
 }
 

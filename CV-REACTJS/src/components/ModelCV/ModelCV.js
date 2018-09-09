@@ -102,7 +102,7 @@ const mapDispatchToProps = (dispatch, props) =>{
   return{
     fetchCV : (id) =>{
       dispatch(actions.actFetchCVRequest(id));
-      dispatch(actions.actListComponent(id));
+      dispatch(actions.actAllListComponent(id));
     },
     updateName : (text, id) =>{
       dispatch(actions.actUpdateNameCVRequest(text,id));

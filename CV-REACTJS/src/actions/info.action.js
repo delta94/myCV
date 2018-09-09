@@ -148,21 +148,21 @@ export const actAppearComponent = (name, id) =>{
     });
   }
 }
-export const actListComponent = (id) =>{
-  return (dispatch) =>{
-    return CallApi('getListCheck/' + id, "GET",{
-
-    }).then(res =>{
-      dispatch(actfetchComponent(res.data))
-    })
-  }
-}
-// export const actAllListComponent = (id) =>{
+// export const actListComponent = (id) =>{
 //   return (dispatch) =>{
-//     return CallApi('getAllComponent/' + id, "GET",{
+//     return CallApi('getListCheck/' + id, "GET",{
 
-//     }).then(res=>{
-//       dispatch(actfetchComponent(res.data));
+//     }).then(res =>{
+//       dispatch(actfetchComponent(res.data))
 //     })
 //   }
 // }
+export const actAllListComponent = (id) =>{
+  return (dispatch) =>{
+    return CallApi('getAllComponent/' + id, "GET",{
+
+    }).then(res=>{
+      dispatch(actfetchComponent(res.data));
+    })
+  }
+}
