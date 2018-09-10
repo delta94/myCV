@@ -23,9 +23,6 @@ class AddAndSort extends Component {
     closeModal = () =>{
         this.props.turnOffModal()
     }
-    componentWillMount(){
-        console.log(this.props.listComponent)
-    }
     render(){
         return (
             <div className="AddAndSort">
@@ -76,7 +73,7 @@ const mapStateToProps = (state) =>{
 }
   
 const mapDispatchToProps = (dispatch, props) =>{
-    return{
+    return{ 
         fetchCV : (id) =>{
             dispatch(actions.actFetchCVRequest(id));
         },
